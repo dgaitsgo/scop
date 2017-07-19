@@ -33,6 +33,7 @@ Move triangles along their normals:
 #### Instancing
 
 Increase instances in a square fashion. Max 4x4
+
 <kbd>O</kbd> - +1 square unit
 
 <kbd>I</kbd> - -1 square unit
