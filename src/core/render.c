@@ -45,7 +45,7 @@ void	polygon_mode(int pm)
 	if (pm == 1)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	else
-		glPolygonMode( GL_FRONT_AND_BACK, GL_FILL);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void	check_event(t_scop *scop, t_window *window, t_camera *c)
@@ -160,8 +160,9 @@ void	render(t_scop *scop)
 	while (1)
 	{
 		draw_routine(scop);
-		if (scop->rotate)
-			scop->y_rotation += .4;
+		if (scop->rotate) {
+			scop->y_rotation += 0.2;
+		}
 		adjust_view(&scop->camera.fps_mouse, &scop->camera, &scop->window);
 		check_event(scop, &scop->window, &scop->camera);
 		look_at_cont(&scop->camera, RH);
