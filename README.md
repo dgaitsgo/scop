@@ -1,3 +1,5 @@
+![vibe controller](https://github.com/dgaitsgo/scop/blob/master/demo.png?raw=true)
+
 # scop
 .obj models get OpenGL treatment
 
