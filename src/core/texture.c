@@ -6,13 +6,13 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 11:40:23 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/29 01:23:03 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 11:52:16 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-t_texture_lst		*new_texture(void)
+t_texture_lst	*new_texture(void)
 {
 	t_texture_lst	*t;
 
@@ -23,28 +23,28 @@ t_texture_lst		*new_texture(void)
 	return (t);
 }
 
-void		set_open_gl_texture_flags(void)
+void			set_open_gl_texture_flags(void)
 {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D,
+		GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 }
 
-void		next_texture(t_texture_lst *e)
+void			next_texture(t_texture_lst *e)
 {
 	e->previous = e;
 	e->next = new_texture();
 	e = e->next;
 }
 
-void		gen_and_activate_texture(t_texture_lst *t)
+void			gen_and_activate_texture(t_texture_lst *t)
 {
 	glGenTextures(1, &t->ref);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, t->ref);
 	glGenerateMipmap(GL_TEXTURE_2D);
-
 	set_open_gl_texture_flags();
 	glTexImage2D(
 		GL_TEXTURE_2D,
@@ -59,7 +59,7 @@ void		gen_and_activate_texture(t_texture_lst *t)
 	glGenerateMipmap(GL_TEXTURE_2D);
 }
 
-void		get_textures_from_directory(t_texture_lst *texture)
+void			get_textures_from_directory(t_texture_lst *texture)
 {
 	DIR				*dir;
 	struct dirent	*file;
@@ -72,26 +72,11 @@ void		get_textures_from_directory(t_texture_lst *texture)
 	{
 		ext_str = get_extension(file->d_name);
 		ext = match_extension_to_enum(ext_str);
-		// Only supports TGA for now :
 		if (ext != INVALID)
 		{
-			if (ext == TGA) 
-				parse_tga(file->d_name, texture);			
+			if (ext == TGA)
+				parse_tga(file->d_name, texture);
 			next_texture(texture);
 		}
 	}
-}
-
-void		init_gl_texture_list(t_gl *gl)
-{
-	gl->root_texture = new_texture();
-	gl->curr_texture = gl->root_texture;
-}
-
-void		load_textures(t_gl *gl)
-{
-	init_gl_texture_list(gl);
-	get_textures_from_directory(gl->curr_texture);
-	gen_and_activate_texture(gl->root_texture);
-	set_texture(gl);
 }

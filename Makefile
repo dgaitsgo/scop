@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/31 16:35:38 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/12/19 00:05:52 by dgaitsgo         ###   ########.fr        #
+#    Updated: 2018/12/19 13:39:33 by dgaitsgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,25 +19,34 @@ INC_DIR = ./inc
 SRC_FILES = \
 $(SRC_DIR)/core/transform.c \
 $(SRC_DIR)/core/color.c \
+$(SRC_DIR)/core/controls.c \
 $(SRC_DIR)/core/model.c \
 $(SRC_DIR)/core/main.c \
 $(SRC_DIR)/core/window.c \
 $(SRC_DIR)/core/open_gl.c \
+$(SRC_DIR)/core/group.c \
 $(SRC_DIR)/core/midi.c \
 $(SRC_DIR)/core/midi2.c \
 $(SRC_DIR)/core/constructors.c \
 $(SRC_DIR)/core/texture.c \
+$(SRC_DIR)/core/texture2.c \
 $(SRC_DIR)/core/parse_mesh.c \
 $(SRC_DIR)/core/parse_tga.c \
 $(SRC_DIR)/core/math.c \
 $(SRC_DIR)/core/math2.c \
 $(SRC_DIR)/core/render.c \
+$(SRC_DIR)/core/render2.c \
 $(SRC_DIR)/core/debug_open_gl.c \
 $(SRC_DIR)/core/debug.c \
+$(SRC_DIR)/core/generate_buffs.c \
 $(SRC_DIR)/core/file_helpers.c \
 $(SRC_DIR)/core/fetch_memory.c \
 $(SRC_DIR)/core/push_face.c \
 $(SRC_DIR)/core/shader.c \
+$(SRC_DIR)/core/shader2.c \
+$(SRC_DIR)/core/curr_shader.c \
+$(SRC_DIR)/core/check_flags.c \
+$(SRC_DIR)/core/push_vects.c \
 $(SRC_DIR)/core/order_data.c \
 $(SRC_DIR)/core/fps_mouse.c \
 $(SRC_DIR)/core/camera.c \

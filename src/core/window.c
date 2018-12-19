@@ -6,13 +6,13 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:34:16 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/27 17:54:09 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 11:54:29 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-void	set_SDL_attributes(void)
+void			set_sdl_attributes(void)
 {
 	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
@@ -36,17 +36,13 @@ void			init_window(WINDOW *window, char *title, int width, int height)
 	SDL_DEPTH = DEFAULT_COLOR_DEPTH;
 	SDL_BPL = SDL_WIDTH * (SDL_DEPTH / DEFAULT_COLOR_DEPTH / 3);
 	SDL_Init(SDL_INIT_VIDEO);
-
 	SDL_GetCurrentDisplayMode(0, &window->mode);
-//	SDL_WIDTH = 800;
-//	SDL_HEIGHT = 600;
-
 	SDL_WIDTH = window->mode.w;
 	SDL_HEIGHT = window->mode.h;
-	set_SDL_attributes();
+	set_sdl_attributes();
 	x_offset = (window->mode.w - SDL_WIDTH) / 2;
 	y_offset = (window->mode.h - SDL_HEIGHT) / 2;
-	SDL_WINDOW = SDL_CreateWindow(	title,
+	SDL_WINDOW = SDL_CreateWindow(title,
 									x_offset,
 									y_offset,
 									SDL_WIDTH,
@@ -54,7 +50,6 @@ void			init_window(WINDOW *window, char *title, int width, int height)
 									SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 	SDL_SetWindowFullscreen(SDL_WINDOW, SDL_WINDOW_FULLSCREEN_DESKTOP);
 	window->gl_context = SDL_GL_CreateContext(SDL_WINDOW);
-	printf("%s\n", glGetString(GL_VERSION));
 }
 
 void			kill_sdl(WINDOW *window)

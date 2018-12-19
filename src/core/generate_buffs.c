@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   transform.c                                        :+:      :+:    :+:   */
+/*   generate_buffs.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/22 11:43:48 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 11:52:47 by dgaitsgo         ###   ########.fr       */
+/*   Created: 2018/12/19 11:57:59 by dgaitsgo          #+#    #+#             */
+/*   Updated: 2018/12/19 11:58:09 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-void		init_transform(t_transform *t)
+void		generate_vbo(GLuint *ref, int n_faces, GLfloat *vertices)
 {
-	t->scale = new_point(1, 1, 1, 1);
-	t->rotation = new_vector(0, 0, 0);
-	t->translation = new_vector(0, 0, 0);
+	glGenBuffers(1, ref);
+	glBindBuffer(GL_ARRAY_BUFFER, *ref);
+	glBufferData(GL_ARRAY_BUFFER,
+	sizeof(GLfloat) * n_faces, vertices, GL_STATIC_DRAW);
+	status_gl("Added VBO", __LINE__, __FILE__);
+}
+
+void		generate_vao(GLuint *ref)
+{
+	glGenVertexArrays(1, ref);
+	glBindVertexArray(*ref);
+	status_gl("Added VAO", __LINE__, __FILE__);
 }

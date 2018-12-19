@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:40:01 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 00:46:09 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 13:41:27 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,26 @@ int					init_midi(t_scop *scop);
 void				push(float *array, int *pos, float item);
 int					round_up(int num, int factor);
 void				check_status(t_midi_message *m);
-
+void				set_texture(t_gl *gl);
+void				draw_routine(t_scop *scop);
+t_shader_lst		*get_curr_shader(t_gl *gl, int shader_type);
+void				generate_vbo(GLuint *ref, int n_faces, GLfloat *vertices);
+void				generate_vao(GLuint *ref);
+t_texture_lst		*new_texture(void);
+void				set_open_gl_texture_flags(void);
+void				next_texture(t_texture_lst *e);
+void				gen_and_activate_texture(t_texture_lst *t);
+void				get_textures_from_directory(t_texture_lst *texture);
+void				check_event(t_scop *scop, t_window *window, t_camera *c);
+void				check_flags(int flags);
+void				check_face_flags(char *line, int *flags);
+void				push_vertex(t_obj_data *data, char *line);
+void				push_text_coord(t_obj_data *data, char *line);
+void				push_normal(t_obj_data *data, char *line);
+void				bind_shader(GLuint program,
+						GLuint vert_ref,
+						GLuint geom_ref,
+						GLuint frag_ref);
+void				count_group_data(FILE *fd, t_group_lst *group,
+					int *n_groups, int *flags);
 #endif
