@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 12:02:07 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:48:43 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 13:57:57 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	move_camera(t_window *window, t_camera *c, float time)
 {
+	printf("fuck fuck fuck");
 	if (KEY == SDLK_w)
 		c->position =
 			vector_add(c->position,

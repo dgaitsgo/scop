@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/03 14:23:09 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:42:27 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 13:52:40 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		write_in_data(t_obj_data **obj_data, FILE *fd, int flags)
 			{
 				i_group++;
 				last_read_was_face = 0;
-			}	
+			}
 			push_vertex(obj_data[i_group], line.s);
 		}
 		else if (line.s[0] == 'v' && line.s[1] == 't')
@@ -53,10 +53,11 @@ void		load_obj(t_model *model, FILE *fd)
 	count_group_data(fd, group, &model->n_groups, &model->flags);
 	check_flags(model->flags);
 	model->obj_data = fetch_obj_data_mem(model->root_group, model->n_groups);
-	fseek(fd, 0, SEEK_SET);	
+	fseek(fd, 0, SEEK_SET);
 	write_in_data(model->obj_data, fd, model->flags);
 	model->vertex_table =
 		fetch_vertex_table_mem(model->obj_data, model->n_groups, model->flags);
-	order_data(model->vertex_table, model->obj_data, model->n_groups, model->flags);
+	order_data(model->vertex_table, model->obj_data,
+				model->n_groups, model->flags);
 	bound_model(model);
 }
