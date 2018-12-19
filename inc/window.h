@@ -6,14 +6,14 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:46:03 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/23 18:40:23 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 18:57:39 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __WINDOW_H
 # define __WINDOW_H
 
-# include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
+# include "/nfs/2017/d/dgaitsgo/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
 
 # define WINDOW					t_window
 # define WIN_WIDTH				800.0f

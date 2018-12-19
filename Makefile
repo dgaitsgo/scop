@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/31 16:35:38 by dgaitsgo          #+#    #+#              #
-#    Updated: 2017/04/28 16:48:55 by dgaitsgo         ###   ########.fr        #
+#    Updated: 2018/12/19 00:05:52 by dgaitsgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,13 @@ $(SRC_DIR)/core/main.c \
 $(SRC_DIR)/core/window.c \
 $(SRC_DIR)/core/open_gl.c \
 $(SRC_DIR)/core/midi.c \
+$(SRC_DIR)/core/midi2.c \
 $(SRC_DIR)/core/constructors.c \
 $(SRC_DIR)/core/texture.c \
 $(SRC_DIR)/core/parse_mesh.c \
 $(SRC_DIR)/core/parse_tga.c \
-$(SRC_DIR)/core/helpers.c \
 $(SRC_DIR)/core/math.c \
+$(SRC_DIR)/core/math2.c \
 $(SRC_DIR)/core/render.c \
 $(SRC_DIR)/core/debug_open_gl.c \
 $(SRC_DIR)/core/debug.c \
@@ -40,6 +41,8 @@ $(SRC_DIR)/core/shader.c \
 $(SRC_DIR)/core/order_data.c \
 $(SRC_DIR)/core/fps_mouse.c \
 $(SRC_DIR)/core/camera.c \
+$(SRC_DIR)/core/util.c \
+$(SRC_DIR)/core/util2.c \
 $(SRC_DIR)/matrix/copy_matrix.c \
 $(SRC_DIR)/matrix/matrix.c \
 $(SRC_DIR)/matrix/inverse_rotation_matrix.c \
@@ -85,7 +88,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	make -C ./lib/libft
-	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks -framework SDL2 -framework OpenGL -framework Foundation -framework CoreMIDI
+	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/nfs/2017/d/dgaitsgo/Library/Frameworks -framework SDL2 -framework OpenGL -framework Foundation -framework CoreMIDI
 
 %.o:%.c $(INC_FILES)
 	gcc -c $(FLAGS) -I$(INC_DIR) $< -o $@

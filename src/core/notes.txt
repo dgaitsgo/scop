@@ -1,0 +1,21 @@
+
+
+	
+file_helpers:
+	- match_extension_to_enum -> Should be more general to accept an array of strings and expected values
+	- match is too greedy (e.g. would match ".geomXXX")
+
+main
+
+	1. Documentation
+	2. Defensive coding
+		a. custom assert
+			i. for error handling
+			ii. for abotss
+		b. persistence check
+	3. Error handling
+		c. logs : log(char *message, &adress, __FILE__, __LINE__);
+		I should be able to look at an error and
+			Know where it happened
+			What was the value, but how to keep types?
+

@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 02:31:59 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/23 22:52:50 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 20:08:47 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	bound_model(t_model *model)
 {
 	t_vector			curr;
 	t_bounding_sphere	*bv;
-	int 				i;
+	int					i;
 	int					j;
 
 	i = 0;
@@ -45,7 +45,4 @@ void	bound_model(t_model *model)
 	bv->center.y = (bv->max.y + bv->min.y) / 2;
 	bv->center.z = (bv->max.z + bv->min.z) / 2;
 	bv->diameter = euclidean_distance3d(bv->max, bv->min);
-
-	//printf("MODEL min = %f, %f, %f\n", model->min.x, model->min.y, model->min.z);
-	//printf("MODEL max = %f, %f, %f\n", model->max.x, model->max.y, model->max.z);
 }

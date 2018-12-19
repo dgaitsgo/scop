@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/01 13:24:23 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/29 01:23:05 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 20:35:48 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,12 @@ void	check_event(t_scop *scop, t_window *window, t_camera *c)
 void	look_at_cont(t_camera *c, int handedness)
 {
 	if (handedness == LH)
-		look_atLH(c->view,
+		look_at_lh(c->view,
 				c->position,
 			vector_add(c->position, c->direction),
 				c->up);
 	else if (handedness == RH)
-		look_atRH(c->view,
+		look_at_rh(c->view,
 				c->position,
 				vector_add(c->position, c->direction),
 				c->up);

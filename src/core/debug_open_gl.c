@@ -6,17 +6,18 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 07:50:30 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/28 15:35:27 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 22:48:39 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-void	check_shader_compile(GLuint shader_name)
+void		check_shader_compile(GLuint shader_name)
 {
 	GLint	status;
-	char	*buffer = malloc(512);
+	char	*buffer;
 
+	buffer = malloc(512);
 	glGetShaderiv(shader_name, GL_COMPILE_STATUS, &status);
 	if (status != GL_TRUE)
 	{
@@ -27,29 +28,31 @@ void	check_shader_compile(GLuint shader_name)
 	free(buffer);
 }
 
-void	get_active_uniforms(GLuint program, GLuint n_uniforms)
+void		get_active_uniforms(GLuint program, GLuint n_uniforms)
 {
-	char	*buffer = malloc(512);
+	char	*buffer;
 	int		i;
 
 	i = 0;
+	buffer = malloc(512);
 	printf("Active uniforms = %d\n", n_uniforms);
 	while (i < n_uniforms)
 	{
-		glGetActiveUniform(	program,
-							i,
-							512,
-							NULL,
-						 	NULL,
-							NULL,
-							buffer);
+		glGetActiveUniform(
+			program,
+			i,
+			512,
+			NULL,
+			NULL,
+			NULL,
+			buffer);
 		printf("Name of uniform : %s\n", buffer);
 		i++;
 	}
 	free(buffer);
 }
 
-void	check_open_gl_program(GLuint program)
+void		check_open_gl_program(GLuint program)
 {
 	int		ret;
 
@@ -69,9 +72,9 @@ void	check_open_gl_program(GLuint program)
 	printf("\n");
 }
 
-void	status_gl(const char *message, int line, char *file)
+void		status_gl(const char *message, int line, char *file)
 {
-	int	err;
+	int		err;
 
 	if ((err = glGetError()) != GL_NO_ERROR)
 	{

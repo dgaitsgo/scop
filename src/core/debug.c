@@ -6,18 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 01:32:49 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/27 17:26:33 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 19:58:46 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
-
-
-//void	log(char *message, void *value, int type)
-//{
-//	fprintf(scop_log, "%s : %c" message, );
-//}
-
 
 void		check_groups(t_group_lst *group)
 {

@@ -6,19 +6,19 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 19:37:46 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/28 16:10:37 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 22:45:10 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-void	init_getline(t_getline *line)
+void				init_getline(t_getline *line)
 {
 	line->s = NULL;
 	line->n = 0;
 }
 
-struct s_group_lst			*new_group(void)
+struct s_group_lst	*new_group(void)
 {
 	struct s_group_lst *node;
 

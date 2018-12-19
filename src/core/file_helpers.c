@@ -6,23 +6,13 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/02 03:36:57 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/28 17:14:47 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/18 22:49:10 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
 
-/*
-	match extension to enum:
-
-	TO DO;
-	Should be more general to accept an array of strings and expected values
-	
-	problems:
-	this would match ".geomXXX"
-*/
-
-int	match_extension_to_enum(const char *file_extension)
+int			match_extension_to_enum(const char *file_extension)
 {
 	if (file_extension != NULL)
 	{
@@ -46,7 +36,7 @@ char		*get_extension(const char *file_name)
 	return (extension);
 }
 
-char	*file_to_string(const char *path, const char *file)
+char		*file_to_string(const char *path, const char *file)
 {
 	FILE	*fd;
 	long	size;
