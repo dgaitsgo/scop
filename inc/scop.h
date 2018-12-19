@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:40:01 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 00:05:41 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/19 00:46:09 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ void				load_textures(t_gl *gl);
 int					init_midi(t_scop *scop);
 void				push(float *array, int *pos, float item);
 int					round_up(int num, int factor);
+void				check_status(t_midi_message *m);
 
 #endif
