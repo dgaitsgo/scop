@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   model.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 12:08:40 by dgaitsgo          #+#    #+#             */
+/*   Updated: 2018/12/20 12:11:19 by dgaitsgo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __MODEL_H
 # define __MODEL_H
 
-#include "vector.h"
-#include "open_gl.h"
-#include "texture.h"
+# include "vector.h"
+# include "open_gl.h"
+# include "texture.h"
 
 enum			e_flags
 {
@@ -36,7 +48,6 @@ typedef struct				s_bounding_sphere
 	float					diameter;
 }							t_bounding_sphere;
 
-//should be called meta
 typedef	struct				s_group_lst
 {
 	int						quads;
@@ -68,21 +79,17 @@ typedef	struct				s_vertex_table
 
 typedef struct				s_obj_data
 {
-//	t_shader_state			*shdr_state;
 	int						quads;
 
 	t_vector				*vertices;
 	t_vector				*text_coords;
 	t_vector				*normals;
-
 	int						*vert_indices;
 	int						*text_indices;
 	int						*norm_indices;
-
 	int						n_vertices;
 	int						n_text_coords;
 	int						n_normals;
-
 	int						n_faces;
 	int						n_vert_indices;
 	int						n_text_indices;
@@ -91,7 +98,6 @@ typedef struct				s_obj_data
 
 typedef struct				s_model
 {
-	// missing reference to mtl file
 	int						flags;
 	int						n_groups;
 	t_matrix				model;

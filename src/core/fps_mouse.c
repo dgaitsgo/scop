@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/23 06:04:48 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 22:51:40 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:43:31 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void			calc_viewing_angles(t_fps_mouse *m,
 									float width,
 									float height)
 {
+	delta = 0;
 	m->horizontal_angle += m->mouse_speed * (width / 2 - m->xpos);
 	m->vertical_angle += m->mouse_speed * (height / 2 - m->ypos);
 }

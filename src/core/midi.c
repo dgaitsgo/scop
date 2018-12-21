@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 23:46:45 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 00:06:06 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 23:44:07 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,18 @@ void	midi_state_change(int button, int value, t_scop *scop)
 	}
 }
 
-void	midi_input_callback(
-			const MIDIPacketList *list,
-			void *proc_ref,
-			void *src_ref)
+void	midi_input_callback(const MIDIPacketList *list, void *proc_ref,
+		void *src_ref)
 {
 	t_midi_message	m;
-	int				i;
+	UInt32			i;
 
-	i = 0;
+	i = -1;
 	m.continue_sysex = 0;
 	m.sysex_length = 0;
 	m.packet = &list->packet[0];
-	while (i < list->numPackets)
+	src_ref = 0;
+	while (++i < list->numPackets)
 	{
 		m.n_bytes = m.packet->length;
 		if (m.continue_sysex)
@@ -77,7 +76,6 @@ void	midi_input_callback(
 				m.packet->data[m.i_byte + 2], (t_scop *)proc_ref);
 			m.i_byte += m.size;
 		}
-		i++;
 		m.packet = MIDIPacketNext(m.packet);
 	}
 }
@@ -109,7 +107,6 @@ int		init_midi(t_scop *scop)
 	MIDIClientRef	midi_client;
 	MIDIPortRef		input_port;
 	MIDIEndpointRef	end_point;
-	MIDIObjectType	found_obj;
 	OSStatus		result;
 
 	result = MIDIClientCreate(CFSTR("MIDI client"), NULL, NULL, &midi_client);

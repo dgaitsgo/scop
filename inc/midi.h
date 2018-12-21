@@ -1,16 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   midi.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 12:14:06 by dgaitsgo          #+#    #+#             */
+/*   Updated: 2018/12/20 17:46:30 by dgaitsgo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __MIDI_H
 # define __MIDI_H
 
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIServices.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDISetup.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIThruConnection.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIDriver.h"
-//#include <Foundation/NSObjCRuntime.h>
-//#include <Foundation/NSDictionary.h>
+# include <CoreMIDI/MIDIServices.h>
+# include <CoreMIDI/MIDISetup.h>
+# include <CoreMIDI/MIDIThruConnection.h>
+# include <CoreMIDI/MIDIDriver.h>
 
-//TraktorX11
-#define UNIQUE_ID		468733292
-#define SYSEX_LENGTH	1024
+# define UNIQUE_ID		468733292
+# define SYSEX_LENGTH	1024
 
 typedef struct			s_midi_message
 {

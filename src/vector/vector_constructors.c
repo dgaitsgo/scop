@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/04/23 00:36:38 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:44:41 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_vector	new_point(float x, float y, float z, float w)
 {
 	t_vector n;
 
+	w = 0;
 	n.x = x;
 	n.y = y;
 	n.z = z;

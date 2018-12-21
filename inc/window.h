@@ -6,14 +6,14 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:46:03 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 18:57:39 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 20:56:14 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __WINDOW_H
 # define __WINDOW_H
 
-# include "/nfs/2017/d/dgaitsgo/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
+# include "/nfs/2017/d/dgaitsgo/Library/Frameworks/SDL2.framework/Headers/SDL.h"
 
 # define WINDOW					t_window
 # define WIN_WIDTH				800.0f
@@ -50,8 +50,7 @@ typedef	struct					s_sdlwindow
 	int							flags;
 }								t_window;
 
-void							init_window(WINDOW *window,
-											char *title, int width, int height);
+void							init_window(WINDOW *window, char *title);
 void							kill_sdl(WINDOW *window);
 void							reset_mouse(t_window *window);
 #endif

@@ -6,43 +6,36 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:40:01 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:41:27 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:55:52 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __SCOP_H
 # define __SCOP_H
 
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIServices.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDISetup.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIThruConnection.h"
-#include "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIDriver.h"
-#include "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers/CFString.h"
-
-#include <stdio.h>
-#include <dirent.h>
-#include <assert.h>
-#include <float.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <math.h>
-
-#include "window.h"
-#include "open_gl.h"
-#include "camera.h"
-#include "window.h"
-#include "macros.h"
-#include "model.h"
-#include "flags.h"
-#include "helpers.h"
-#include "texture.h"
-#include "transform.h"
-#include "libft.h"
-#include "ft_math.h"
-#include "parse_mesh.h"
-#include "midi.h"
-#include "triangle_idx.h"
+# include <stdio.h>
+# include <dirent.h>
+# include <assert.h>
+# include <float.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <math.h>
+# include "window.h"
+# include "open_gl.h"
+# include "camera.h"
+# include "window.h"
+# include "macros.h"
+# include "model.h"
+# include "flags.h"
+# include "helpers.h"
+# include "texture.h"
+# include "transform.h"
+# include "libft.h"
+# include "ft_math.h"
+# include "parse_mesh.h"
+# include "midi.h"
+# include "triangle_idx.h"
 
 enum				e_3d_types
 {
@@ -67,7 +60,7 @@ typedef struct		s_scop
 }					t_scop;
 
 void				init_open_gl(t_scop *scop);
-void				order_data(	t_vertex_table *v,
+void				order_data(t_vertex_table *v,
 								t_obj_data **data,
 								int n_groups,
 								int flags);
@@ -115,4 +108,14 @@ void				bind_shader(GLuint program,
 						GLuint frag_ref);
 void				count_group_data(FILE *fd, t_group_lst *group,
 					int *n_groups, int *flags);
+void				look_at_lh(
+					t_matrix m,
+					t_vector eye,
+					t_vector center,
+					t_vector up);
+void				look_at_rh(
+					t_matrix m,
+					t_vector eye,
+					t_vector center,
+					t_vector up);
 #endif

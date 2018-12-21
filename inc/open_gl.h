@@ -6,26 +6,25 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:12:10 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/29 00:41:04 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:52:36 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __OPEN_GL_H
 # define __OPEN_GL_H
 
-#include <OpenGL/gl3.h>
-#include "model.h"
-#include "transform.h"
+# include <OpenGL/gl3.h>
+# include "model.h"
+# include "transform.h"
 
 # define SHADER_PATH	"./shaders/"
 
-enum					e_SHADER_TYPES
+enum					e_shader_types
 {
 	INVALID = -1,
 };
 
-//fuck this enum, burn it to hell
-enum					e_TRANSFORM_TYPES
+enum					e_transform_types
 {
 	MODEL,
 	OFFSET,
@@ -48,7 +47,7 @@ typedef struct			s_shader_lst
 }						t_shader_lst;
 
 typedef struct			s_array_group
-{	
+{
 	GLuint				vbo;
 	GLfloat				*vertices;
 	GLfloat				*normals;
@@ -71,31 +70,24 @@ typedef struct			s_uniform
 typedef struct			s_gl
 {
 	int					flags;
-
 	t_shader_lst		*root_vert_shdr;
 	t_shader_lst		*root_geom_shdr;
 	t_shader_lst		*root_frag_shdr;
-
 	t_shader_lst		*curr_vert_shdr;
 	t_shader_lst		*curr_geom_shdr;
 	t_shader_lst		*curr_frag_shdr;
-
 	t_texture_lst		*root_texture;
 	t_texture_lst		*curr_texture;
-
 	int					n_vert_shdrs;
 	int					n_frag_shdrs;
 	int					n_geom_shdrs;
-
 	int					n_textures;
-
 	GLuint				uniform_refs[10];
 	GLuint				shdr_program;
 	GLint				pos_attrib;
 	GLuint				vao;
 	GLuint				*vbo;
 }						t_gl;
-
 
 void					check_shader_compile(GLuint shader_name);
 void					status_gl(const char *message, int line, char *file);
@@ -110,8 +102,6 @@ void					associate_standard_uniforms(t_gl *gl,
 										t_matrix model,
 										t_matrix view,
 										t_matrix projection);
-
-
 void					set_texture(t_gl *gl);
 GLuint					get_curr_shader_ref(t_gl *gl, int shader_type);
 t_shader_lst			*get_curr_shader(t_gl *gl, int shader_type);

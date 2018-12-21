@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 23:47:11 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/23 04:12:15 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 12:08:24 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		build_translation_matrix(t_matrix m, float x, float y, float z)
 	m[3][3] = 1;
 }
 
-void		compose_matrices(	t_matrix transform,
+void		compose_matrices(t_matrix transform,
 								t_matrix scale,
 								t_matrix rotation,
 								t_matrix translation)

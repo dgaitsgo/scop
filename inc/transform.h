@@ -6,14 +6,14 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 11:48:31 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/23 00:35:50 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:57:20 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __TRANSFORM_H
 # define __TRANSFORM_H
 
-#include "matrix.h"
+# include "matrix.h"
 
 typedef struct	s_transform
 {

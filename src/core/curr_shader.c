@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 11:56:37 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:14:22 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:46:08 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ GLuint			get_curr_shader_ref(t_gl *gl, int shader_type)
 		ref = gl->curr_vert_shdr->ref;
 	else if (shader_type == GL_GEOMETRY_SHADER)
 		ref = gl->curr_geom_shdr->ref;
-	else if (shader_type == GL_FRAGMENT_SHADER)
+	else
 		ref = gl->curr_frag_shdr->ref;
 	return (ref);
 }

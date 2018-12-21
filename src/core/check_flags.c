@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 13:19:14 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:22:05 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 11:57:30 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		check_flags(int flags)
 		ft_putstr("f %d//%d %d//%d %d//%d %d//%d\n");
 	if (BIT_CHECK(flags, TEXT_COORDS_DEFINED) &&
 		(!(BIT_CHECK(flags, NORMALS_DEFINED))))
-		ft_putstr ("f %d/%d %d/%d %d/%d %d/%d\n");
+		ft_putstr("f %d/%d %d/%d %d/%d %d/%d\n");
 }
 
 void		check_face_flags(char *line, int *flags)

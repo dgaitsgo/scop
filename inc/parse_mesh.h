@@ -6,14 +6,14 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:05:56 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/28 14:00:02 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:53:08 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __PARSE_MESH_H
 # define __PARSE_MESH_H
 
-enum			e_VERTEX_TYPES
+enum			e_vertex_types
 {
 	VERT_V,
 	TEXT_V,
@@ -26,6 +26,6 @@ typedef struct	s_getline
 	size_t		n;
 }				t_getline;
 
-void		init_getline(t_getline *line);
+void			init_getline(t_getline *line);
 
 #endif

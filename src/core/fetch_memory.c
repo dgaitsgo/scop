@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/02 03:37:41 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 22:48:59 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:42:00 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_vertex_table		*fetch_vertex_table_mem(t_obj_data **data,
 	int				total_points;
 
 	i = 0;
+	flags = 0;
 	v = ft_memalloc(sizeof(t_vertex_table));
 	total_points = 0;
 	while (i < n_groups)

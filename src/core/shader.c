@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 04:39:38 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:10:14 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 11:57:47 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		load_shader(GLenum type, unsigned int *ref, const char *file_name)
 {
-	GLchar 	*shader_source;
+	GLchar	*shader_source;
 
 	*ref = glCreateShader(type);
 	shader_source = file_to_string(SHADER_PATH, file_name);
@@ -24,17 +24,17 @@ void		load_shader(GLenum type, unsigned int *ref, const char *file_name)
 	status_gl("Compile shader", __LINE__, __FILE__);
 }
 
-void			next_shader(int type, t_shader_lst *e)
+void		next_shader(int type, t_shader_lst *e)
 {
 	e->previous = e;
 	e->next = new_shader(type);
 	e = e->next;
 }
 
-void				get_shaders_from_directory(t_gl *gl)
+void		get_shaders_from_directory(t_gl *gl)
 {
 	DIR				*dir;
-	struct dirent	*file;		
+	struct dirent	*file;
 	char			*ext_str;
 	int				ext;
 	t_shader_lst	*shader;

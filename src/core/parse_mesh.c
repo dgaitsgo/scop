@@ -6,18 +6,35 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/03 14:23:09 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:52:40 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:46:52 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scop.h"
+
+int			push_coord(t_getline line, t_obj_data **obj_data,
+				int i_group, int flags)
+{
+	int last_read_was_face;
+
+	last_read_was_face = 0;
+	if (line.s[0] == 'v' && line.s[1] == 't')
+		push_text_coord(obj_data[i_group], line.s);
+	else if (line.s[0] == 'v' && line.s[1] == 'n')
+		push_normal(obj_data[i_group], line.s);
+	else if (line.s[0] == 'f')
+	{
+		last_read_was_face = 1;
+		push_face(obj_data[i_group], line.s, flags);
+	}
+	return (last_read_was_face);
+}
 
 void		write_in_data(t_obj_data **obj_data, FILE *fd, int flags)
 {
 	t_getline	line;
 	int			i_group;
 	int			last_read_was_face;
-	int			i;
 
 	last_read_was_face = 0;
 	i_group = 0;
@@ -33,15 +50,7 @@ void		write_in_data(t_obj_data **obj_data, FILE *fd, int flags)
 			}
 			push_vertex(obj_data[i_group], line.s);
 		}
-		else if (line.s[0] == 'v' && line.s[1] == 't')
-			push_text_coord(obj_data[i_group], line.s);
-		else if (line.s[0] == 'v' && line.s[1] == 'n')
-			push_normal(obj_data[i_group], line.s);
-		else if (line.s[0] == 'f')
-		{
-			last_read_was_face = 1;
-			push_face(obj_data[i_group], line.s, flags);
-		}
+		last_read_was_face = push_coord(line, obj_data, i_group, flags);
 	}
 }
 

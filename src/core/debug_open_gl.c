@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 07:50:30 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 22:48:39 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 21:47:43 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		check_shader_compile(GLuint shader_name)
 void		get_active_uniforms(GLuint program, GLuint n_uniforms)
 {
 	char	*buffer;
-	int		i;
+	GLuint	i;
 
 	i = 0;
 	buffer = malloc(512);

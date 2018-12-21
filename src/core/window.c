@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:34:16 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 11:54:29 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 20:55:30 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			set_sdl_attributes(void)
 	SDL_ShowCursor(SDL_DISABLE);
 }
 
-void			init_window(WINDOW *window, char *title, int width, int height)
+void			init_window(WINDOW *window, char *title)
 {
 	int x_offset;
 	int y_offset;

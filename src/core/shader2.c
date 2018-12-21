@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 13:09:18 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 13:10:12 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 11:57:06 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ struct s_shader_lst	*new_shader(short type)
 	return (node);
 }
 
-
 void				set_standard_shader_uniforms(t_gl *gl)
 {
 	gl->uniform_refs[MODEL] =
 		glGetUniformLocation(gl->shdr_program, "model");
-	gl->uniform_refs[OFFSET] = 
+	gl->uniform_refs[OFFSET] =
 		glGetUniformLocation(gl->shdr_program, "offset");
 	gl->uniform_refs[VIEW] =
 		glGetUniformLocation(gl->shdr_program, "view");
@@ -64,7 +63,7 @@ void				associate_standard_uniforms(t_gl *gl,
 		1, GL_FALSE, &projection[0][0]);
 }
 
-void			bind_shader(GLuint program,
+void				bind_shader(GLuint program,
 						GLuint vert_ref,
 						GLuint geom_ref,
 						GLuint frag_ref)
@@ -79,4 +78,3 @@ void			bind_shader(GLuint program,
 	status_gl("Linked Program", __LINE__, __FILE__);
 	check_open_gl_program(program);
 }
-

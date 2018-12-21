@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/31 16:35:38 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/12/19 13:39:33 by dgaitsgo         ###   ########.fr        #
+#    Updated: 2018/12/20 23:41:19 by dgaitsgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ $(SRC_DIR)/core/push_vects.c \
 $(SRC_DIR)/core/order_data.c \
 $(SRC_DIR)/core/fps_mouse.c \
 $(SRC_DIR)/core/camera.c \
+$(SRC_DIR)/core/look_at.c \
 $(SRC_DIR)/core/util.c \
 $(SRC_DIR)/core/util2.c \
 $(SRC_DIR)/matrix/copy_matrix.c \
@@ -89,7 +90,7 @@ $(INC_DIR)/helpers.h \
 
 LIB_DIR = ./lib/libft
 
-FLAGS = #-Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g
 
 .PHONY: all, clean, fclean, re
 

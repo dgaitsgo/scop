@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 16:49:52 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 20:08:08 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 20:58:13 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		main(int argc, char **argv)
 	{
 		fd = fopen(argv[1], "r");
 		assert(fd != NULL);
-		init_window(&scop.window, argv[1], (int)WIN_WIDTH, (int)WIN_HEIGHT);
+		init_window(&scop.window, argv[1]);
 		init_model(&scop.model);
 		init_camera(&scop.camera);
 		load_obj(&scop.model, fd);

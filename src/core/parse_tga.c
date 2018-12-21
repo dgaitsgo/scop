@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 12:17:55 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/19 12:00:29 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 23:42:49 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		parse_tga(const char *file_name, t_texture_lst *t)
 	assert(f != NULL);
 	about_tga(t, f);
 	t->data = ft_memalloc(sizeof(unsigned char) * t->image_size);
-	if (fread(t->data, 1, t->image_size, f) != t->image_size)
+	if ((long)fread(t->data, 1, t->image_size, f) != t->image_size)
 		exit(-1);
 	bgr_to_rgb(t->data, t->image_size);
 }

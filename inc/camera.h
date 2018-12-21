@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 11:00:30 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/12/18 21:13:18 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:53:56 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void				set_camera(
 
 void				calc_camera_rig(t_camera *c, t_fps_mouse *m);
 
-void	look_at_cont(t_camera *c, int handedness);
-void	set_camera(
-					t_camera *c,
-					t_vector position,
-					t_vector direction,
-					t_vector up);
+void				look_at_cont(t_camera *c, int handedness);
+void				set_camera(
+						t_camera *c,
+						t_vector position,
+						t_vector direction,
+						t_vector up);
 
 #endif

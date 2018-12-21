@@ -6,19 +6,19 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 13:36:05 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/04/29 00:48:17 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/12/20 17:56:40 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __TEXTURE_H
 # define __TEXTURE_H
 
-#define			TEXTURE_PATH			"./textures/"
-#define			MAX_TEXTURES			8
+# define TEXTURE_PATH			"./textures/"
+# define MAX_TEXTURES			8
 
-#include		"open_gl.h"
+# include "open_gl.h"
 
-enum			e_texture_types
+enum						e_texture_types
 {
 	TGA,
 };
